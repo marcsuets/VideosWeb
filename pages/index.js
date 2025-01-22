@@ -3,23 +3,19 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.main}>
+    <div>
       <Head>
         <title>Log-In | VideoPlayerWeb</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main className={styles.main}>
+        <div className={styles.container}>
+			<p className={styles.authTitle}>
+				LOG IN
+			</p>
 
-      <header>
-
-      </header>
-
-      <main>
-        
+        </div>        
       </main>
-
-      <footer>
-        
-      </footer>
     </div>
   );
 }

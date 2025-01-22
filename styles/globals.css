@@ -1,4 +1,12 @@
 /* styles/globals.css */
+
+:root {
+  --color-blue: #4BA1B2;  /* Azul */
+  --color-pink: #B92784; /* Verde */
+  --color-black: #000000; /* Fondo claro */
+  --color-white: #FFFFFF; /* Texto oscuro */
+}
+
 html, body {
   height: 100%;
   margin: 0;
