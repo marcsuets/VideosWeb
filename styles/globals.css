@@ -23,26 +23,6 @@ html, body {
   background-attachment: fixed;
 }
 
-button {
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 24px;  
-  color: var(--color-blue);
-  cursor: pointer;  
-  padding: 10px 20px;
-  border: 3px solid var(--color-blue); 
-
-  background: transparent; 
-  transition: all 0.3s ease;
-  border-radius: 24px;
-}
-
-button:hover {
-  background-color: var(--color-blue);
-  color: var(--color-black);
-  text-decoration: none;
-}
-
 Link {
   text-decoration: none;
 }
@@ -51,7 +31,19 @@ a:visited {
   color: inherit;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+iframe {
+  width: 100%;
+  max-width: 800px;  /* or your preferred max width */
+  height: 450px;     /* 16:9 aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+  iframe {
+    height: 56.25vw;  /* maintains 16:9 aspect ratio on mobile */
+    max-height: 450px;
+    margin-top: 20px;
+  }
 }

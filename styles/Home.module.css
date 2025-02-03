@@ -10,6 +10,27 @@
   background-repeat: no-repeat; /* Evita que se repita */
 }
 
+.button {
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 24px;  
+  color: var(--color-blue);
+  cursor: pointer;  
+  padding: 10px 20px;
+  border: 3px solid var(--color-blue); 
+
+  background: transparent; 
+  transition: all 0.3s ease;
+  border-radius: 24px;
+}
+
+
+.button:hover {
+  background-color: var(--color-blue);
+  color: var(--color-black);
+  text-decoration: none;
+}
+
 .header {
   background-color: var(--color-black);
   height: 10vh; /* 20% de la altura de la ventana */
@@ -27,22 +48,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.container > * {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  color: var(--color-white);
-}
-
-.container > * > * {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .authForm {
@@ -82,13 +87,94 @@
   font-size: 0.9rem;
 }
 
-.blueText {
+.blueTextLink {
   color: var(--color-blue);
 }
+
+.blueTextLink:hover {
+  color: var(--color-blue);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 .mainTitle {
   font-size: 60px;
   font-weight: bold;
   color: var(--color-blue);
   margin-bottom: 20px;
+}
+
+.videoPLayer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.containerVideoPlayer {
+  background-color: var(--color-black);
+  height: 80vh;
+  min-height: 50vh;
+  width: 80vw;
+  border-radius: 24px;
+  box-shadow: 0px 0px 10px var(--color-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-white);
+}
+
+
+.scrollContainer {
+  max-height: 80vh;  /* Adjust this value as needed */
+  overflow-y: auto;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue) transparent;
+}
+
+.mainHeader {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically */
+  height: 30%;           /* Ensures the div takes full viewport height */
+  width: 100%;             /* Ensures the div takes full width */
+  text-align: center;   
+  background-color: transparent;
+}
+
+.mainMain {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue) transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 70%;
+  background-color: transparent;
+  padding: 10px;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.mainMain::-webkit-scrollbar {
+  height: 8px;
+}
+
+.mainMain::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mainMain::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  border-radius: 20px;
 }

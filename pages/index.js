@@ -23,7 +23,6 @@ export default function Home() {
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
       }
-      // Redirect to main page after successful auth
       window.location.href = '/main';
     } catch (error) {
       setError(error.message);
@@ -60,14 +59,15 @@ export default function Home() {
               required
             />
             
-            <button type="submit">
+            <button type="submit" className={styles.button}>
               {isLogin ? 'Login' : 'Register'}
             </button>
             
-            <p onClick={() => setIsLogin(!isLogin)} className={styles.blueText}>
+            <p onClick={() => setIsLogin(!isLogin)} className={styles.blueTextLink}>
               {isLogin 
                 ? "Don't have an account? Register" 
                 : "Already have an account? Login"}
+
             </p>
           </form>
         </div>

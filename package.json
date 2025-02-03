@@ -6,10 +6,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroui/dropdown": "^2.3.10",
+    "@heroui/react": "^2.6.14",
+    "@heroui/system": "^2.4.7",
+    "@heroui/theme": "^2.4.6",
+    "@nextui-org/react": "^2.6.11",
     "firebase": "^11.2.0",
+    "framer-motion": "^12.0.6",
     "next": "^15.1.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^4.0.3"
   },
   "engines": {
     "node": ">=18"
