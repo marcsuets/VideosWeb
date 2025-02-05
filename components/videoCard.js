@@ -1,7 +1,10 @@
+import styles from '../styles/Home.module.css';
+
 export default function VideoCard({ video }) {
   // Función para obtener el ID del video de YouTube desde cualquier URL
   const getYouTubeVideoId = (url) => {
     try {
+
       const parsedUrl = new URL(url);
 
       if (parsedUrl.hostname.includes("youtube.com")) {
@@ -19,7 +22,7 @@ export default function VideoCard({ video }) {
   const isInstagram = video.platform.toLowerCase() === "instagram";
 
   return (
-    <div>
+    <div className={styles.videoCard}>
       {isInstagram ? (
         <img 
           src="/images/Instagram.png" 
