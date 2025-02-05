@@ -53,7 +53,7 @@ export default function Home() {
             
             <input
               type="password"
-              placeholder="Passwors"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

@@ -114,12 +114,20 @@ export default function Main() {
             ))}
           </div>
           <div className={styles.mainMain}>
-
-
-            {videos.map((video) => (
-              <VideoCard key={video.id} video={video} />
-            ))}
+            {videos.length > 0 ? (
+              videos.map((video) => (
+                <VideoCard key={video.id} video={video} />
+              ))
+            ) : (
+              <p className={styles.header}>No videos found</p>
+            )}
           </div>
+          <button className={styles.floatingButton} onClick={() => router.push('/AddVideo')}>
+            Add Video
+          </button>
+          <button className={styles.floatingButtonLogOut} onClick={() => auth.signOut()}>
+            Log Out
+          </button>
         </div>
       </main>
 

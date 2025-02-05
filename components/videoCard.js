@@ -1,16 +1,17 @@
+import { useRouter } from 'next/router';
 import styles from '../styles/Home.module.css';
 
 export default function VideoCard({ video }) {
+  const router = useRouter();
+
   // Función para obtener el ID del video de YouTube desde cualquier URL
   const getYouTubeVideoId = (url) => {
     try {
-
       const parsedUrl = new URL(url);
-
       if (parsedUrl.hostname.includes("youtube.com")) {
-        return parsedUrl.searchParams.get("v"); // Extrae el ID si es una URL normal de YouTube
+        return parsedUrl.searchParams.get("v");
       } else if (parsedUrl.hostname.includes("youtu.be")) {
-        return parsedUrl.pathname.substring(1); // Extrae el ID si es una URL corta de YouTube
+        return parsedUrl.pathname.substring(1);
       }
     } catch (error) {
       console.error("Error parsing video URL:", error);
@@ -21,8 +22,16 @@ export default function VideoCard({ video }) {
   const videoId = getYouTubeVideoId(video.url);
   const isInstagram = video.platform.toLowerCase() === "instagram";
 
+  // Función para manejar el clic y redirigir
+  const handleClick = () => {
+    router.push({
+      pathname: '/WatchVideo',
+      query: { id: video.id } // Solo pasamos el ID
+    });
+  };
+
   return (
-    <div className={styles.videoCard}>
+    <div className={styles.videoCard} onClick={handleClick} style={{ cursor: 'pointer' }}>
       {isInstagram ? (
         <img 
           src="/images/Instagram.png" 
