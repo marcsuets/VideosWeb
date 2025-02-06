@@ -18,3 +18,5 @@ const auth = getAuth(app);
 const db = getFirestore(app); // Agregar Firestore
 
 export { auth, db };
+
+export default app;
