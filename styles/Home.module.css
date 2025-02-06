@@ -140,13 +140,32 @@
 
 .mainHeader {
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center;     /* Centers content vertically */
-  height: 30%;           /* Ensures the div takes full viewport height */
-  width: 100%;             /* Ensures the div takes full width */
-  text-align: center;   
+  justify-content: flex-start; /* Alinea los botones al inicio para facilitar el scroll */
+  align-items: center;
+  height: 20%;
+  max-width: 90%;
+  text-align: center;
   background-color: transparent;
+  overflow-x: auto;  /* Habilita el scroll horizontal */
+  white-space: nowrap; /* Evita que los elementos se vayan a la siguiente línea */
+  padding: 10px;
+  padding-bottom: 0px;
+  gap: 10px; /* Espaciado entre botones */
 }
+
+.mainHeader::-webkit-scrollbar {
+  height: 8px;
+}
+
+.mainHeader::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mainHeader::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  border-radius: 20px;
+}
+
 
 .mainHeaderButton {
   background-color: transparent;
@@ -158,6 +177,7 @@
   font-size: 24px;
   padding: 10px 20px;
   margin: 10px;
+  margin-bottom: 0px;
   transition: color 0.2s linear, border-color 0.2s ease-in-out;
 }
 
@@ -180,6 +200,7 @@
   font-size: 24px;
   padding: 10px 20px;
   margin: 10px;
+  margin-bottom: 0px;
 }
 
 .mainMain {
@@ -194,7 +215,7 @@
   justify-content: space-between;
   align-items: center;
   width: auto;
-  max-width: 95%;
+  max-width: 90%;
   height: 70%;
   background-color: transparent;
   padding: 10px;
